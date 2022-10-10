@@ -12,6 +12,9 @@ public class BookDaoImplement implements BookDao  {
 
 	private EntityManager entityManager;
 	
+	public BookDaoImplement() {
+		entityManager = JPAUtil.getEntityManager();
+	}
 	
 	@Override
 	public Book getBookById(int id) {

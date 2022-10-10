@@ -8,18 +8,36 @@ public class Client {
 
 	public static void main(String[] args) {
 		BookService service =new BookServiceImplement();
+System.out.println(service.getBookById(101));
 		
-		System.out.println("************Listing total number of books*************");
-		System.out.println("Total books:"+service.getBookCount());
+		System.out.println("*************************************");
 		
-		System.out.println("************Listing book with id 105*************");
-		System.out.println("Boo with ID 106:"+service.getBookById(105));
+		for(Book book:service.getBookByTitle("Java Closures and Lambda")) {
+			System.out.println(book);
+		}
 		
-		System.out.println("************Listing All books*************");
+		System.out.println("*************************************");
+		
+		System.out.println(service.getBookCount());
+		
+		System.out.println("****************************************");
+		
+		for(Book b:service.getAuthorbooks("Robert Fischer")){
+			System.out.println(b);
+		}
+		
+		System.out.println("**************************************");
+		
 		for(Book book:service.getAllBooks()) {
 			System.out.println(book);
 		}
-
+		
+		System.out.println("***************************************");
+		
+		for(Book book:service.getBooksInPriceRange(500, 600)) {
+			System.out.println(book);
+		}
+		
 	}
 
 }

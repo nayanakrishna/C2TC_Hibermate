@@ -2,6 +2,7 @@ package com.tnsif.entity;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 @NamedQueries(@NamedQuery(name="getAllBooks",query="SELECT book FROM Book book"))
 
 public class Book implements Serializable {
-	private static final long serialVersionUID = 1l;
+	private static final long serialVersionUID = 1L;
 	@Id
 	private Integer id;
 	private String title;
